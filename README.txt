@@ -3,7 +3,7 @@
 	- ckpt_path: If you want to train the modek from scratch, please set this value as 0. If you want to load checkpoint, please indicate the checkpoint folder.
 	- fold_excel: Generate an .xlsx file to set cross validation data fold
 	- curr_fold: Indicate which fold you are going to run
-	- Augmentation: If you want to use aygmentation, please set this value as 1; otherwise, please set it as 0.
+	- Augmentation: If you want to use augmentation, please set this value as 1; otherwise, please set it as 0.
 3. utils/dataset_ST.py: dataloader
 4. The deep learning architecture is in model folder and the results are saved in exp folder
 5. plot_loss.py: open a terminal and run $ python plot_loss.py --model_path='{your model folder name in the exp folder}'
