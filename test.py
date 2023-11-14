@@ -113,19 +113,7 @@ def test(dataset, fast_m, name='test'):
 	# 预测的cbv的值如果小于0，将其置为0
 	test_img[test_img < 0] = 0
 	PredictionImg = nib.Nifti1Image(test_img, img.affine, img.header) # 存储成3d.nii.gz数据时对应的格式
-	BrainMask_ID = {'ID002':'20201214_212326_IVIM_and_DeepC_FUS_BBB_Scan_ID002_L1_001_1_1_BrainMask',
-					'ID003':'20201215_214853_IVIM_and_DeepC_FUS_BBB_Scan_ID003_L2_001_1_1_BrainMask',
-					'ID004':'20201215_235940_IVIM_and_DeepC_FUS_BBB_Scan_ID004_L3_001_1_1_BrainMask',
-					'ID005':'20210205_151949_IVIM_and_DeepC_FUC_BBB_Scan_ID005_L1_001_1_1_BrainMask',
-					'ID007':'20210213_184916_IVIM_and_DeepC_FUS_BBB_Scan_ID007_L1_001_1_1_BrainMask',
-					'ID008':'20210213_205053_IVIM_and_DeepC_FUS_BBB_Scan_ID008_L1_001_1_1_BrainMask',
-					'ID009':'20210214_181057_IVIM_and_DeepC_FUS_BBB_Scan_ID009_L1_001_1_1_BrainMask',
-					'ID012':'20210221_210445_IVIM_and_DeepC_FUS_BBB_Scan_ID012_L2_001_1_1_BrainMask',
-					'ID014':'20210311_184341_IVIM_and_DeepC_FUS_BBB_Scan_ID014_001_1_1_BrainMask',
-					'ID016':'20210311_220532_IVIM_and_DeepC_FUS_BBB_Scan_ID016_001_1_1_BrainMask',
-					'ID019':'20211202_161605_IVIM_and_DeepC_FUS_BBB_Scan_ID019_001_1_1_BrainMask',
-					'ID020':'20211202_161623_IVIM_and_DeepC_FUS_BBB_Scan_ID020_001_1_1_BrainMask'
-					}
+	
 	# 读入brain mask
 	# BrainMask = nib.load(os.path.join('/media/sail/Elements/BME_Grad_Project/Joanne/BBB_DL/demo/data/raw/BrainMask', BrainMask_ID[name] + '.nii.gz')).get_fdata()
 	BrainMask = nib.load(os.path.join('/data0/BME_caoanbo/project_coding/K-trans_STNet/data/raw/BrainMask', name + '.nii.gz')).get_fdata()
