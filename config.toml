@@ -1,14 +1,13 @@
 [train]
-#dataset = 			"/media/sail/Elements/BME_Grad_Project/Joanne/BBB_DL/demo/data/DL_input/ST_pad_InRawLowDCE_GtRaw_KtransTh/OP_NM_CAlow_1_1_kHigh"
 dataset = 			"/data0/BME_caoanbo/project_coding/K-trans_STNet/data/DL_input/ST_pad_InRawHighDCE_GtRaw_KtransTh/OP_NM_CAhigh_1_2_kHigh"
 ckpt_path = 		"0830_ST_OP_NM_CAhigh_1_2_T8V2_MAE_lr0.0001_batch512_InRawHighDCE_GtRaw_KtransTh_Adam_10subjects_5folds_T10norm_Aug/Fold1/best_patient.tar"
 
 gpu = 				4
 batch = 			512
-lr = 				1e-4 # 原始为1e-4
+lr = 				1e-4
 loss_type = 		"MAE" 		# MSE/MAE/SmoothL1
 Optimizer_type = 	"Adam"  				#SGD/Adam
-max_epoch = 		200  # 单参数模型设置成300，3参数模型设置成400
+max_epoch = 		400  
 stop_num = 			50
 train_val_ratio = 	0.8
 
@@ -19,7 +18,6 @@ Augmentation = 		0
 
 [test]
 dataset = 			"/data0/BME_caoanbo/project_coding/K-trans_STNet/data/DL_input/ST_pad_InRawHighDCE_GtRaw_KtransTh/WB_CAhigh_kHigh"
-#dataset = 			"/data0/BME_caoanbo/project_coding/K-trans_STNet/data/DL_input/ST_pad_InRawHighDCE_GtRaw_KtransTh1/WB_CAhigh_kHigh"
 
 
 batch = 			512
