@@ -51,7 +51,6 @@ def roi_metrics(name):
     test_img[test_img < 0] = 0
     # PredictionImg = nib.Nifti1Image(test_img, img.affine, img.header)  # 存储成3d.nii.gz数据时对应的格式
     # 读入brain mask
-    # BrainMask = nib.load(os.path.join('/media/sail/Elements/BME_Grad_Project/Joanne/BBB_DL/demo/data/raw/BrainMask', BrainMask_ID[name] + '.nii.gz')).get_fdata()
     # BrainMask = nib.load(os.path.join('/data0/BME_caoanbo/project_coding/K-trans_STNet/data/raw/BrainMask',
     #                                   name + '.nii.gz')).get_fdata()
     # penumbra区域的mask，计算ROI内的metrics
