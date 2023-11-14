@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--model_path', required=True, type=str)
 args = parser.parse_args()
 model_path = args.model_path # 训练好的模型相关文件存储的位置
-if os.path.isfile(os.path.join('exp4', model_path, 'config_loadCKPT.toml')): # 检查某个文件是否存在
+if os.path.isfile(os.path.join('exp4', model_path, 'config_loadCKPT.toml')): #
     config_path = os.path.join('exp4', model_path, 'config_loadCKPT.toml')
 elif os.path.isfile(os.path.join('exp4', model_path, 'config.toml')):
     config_path = os.path.join('exp4', model_path, 'config.toml') # config.toml是训练时的各种参数的设置
@@ -23,8 +23,8 @@ fold_df = default_config.train.fold_excel
 fold_df = pd.read_excel(fold_df, dtype={'subject':str, 'fold':int}) # 交叉验证的excel表
 
 plt.figure()
-r, c = 2, len(set(fold_df['fold'])) # c表示的是分成了几折验证
-for i in range(1, len(set(fold_df['fold'])) + 1): # 绘制每一次交叉验证的结果
+r, c = 2, len(set(fold_df['fold'])) # 
+for i in range(1, len(set(fold_df['fold'])) + 1): # 
 	# if os.path.isfile(os.path.join('exp/', model_path, 'models/Fold'+str(i), 'learning_curve.csv')):
 	# 	train_loss = pd.read_csv(os.path.join('exp/',model_path,'models/Fold'+str(i), 'learning_curve.csv'))
 	if os.path.isfile(os.path.join('exp4/', model_path, 'Fold'+str(i), 'learning_curve.csv')): # 读入训练时存储好的各参数
